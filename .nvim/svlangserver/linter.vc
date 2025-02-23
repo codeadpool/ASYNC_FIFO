@@ -1,7 +1,14 @@
 -v /home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg/afifo_env_pkg.sv
+-v /home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg/afifo_wr_agent_pkg.sv
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/dut
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/agents/wr_agent
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb/bfm
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/dut
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/agents/wr_agent
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb/bfm

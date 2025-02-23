@@ -4,6 +4,4 @@ package afifo_wr_agent_pkg;
   `include "afifo_txn.sv"
   `include "afifo_wr_driver.svh"
   `include "afifo_wr_monitor.svh"
-  `include "afifo_wr_agent_cfg.svh"
-  `include "afifo_wr_agent.svh"
 endpackage
