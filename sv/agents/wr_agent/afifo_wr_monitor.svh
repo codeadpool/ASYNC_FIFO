@@ -10,6 +10,8 @@ class afifo_wr_monitor extends uvm_monitor;
 
   function new(string name = "afifo_wr_monitor", uvm_component parent);
     super.new(name, parent);
+    
+    ap = new("ap", this);
   endfunction
 
   virtual function void build_phase(uvm_phase phase);
@@ -32,7 +34,8 @@ class afifo_wr_monitor extends uvm_monitor;
 endclass
 
 task afifo_wr_monitor::run_phase(uvm_phase phase);
-  m_bfm.monitor_write(); 
+  forever begin
+  	m_bfm.monitor_write(); 
+  end
 endtask
-
 `endif
