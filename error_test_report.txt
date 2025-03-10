@@ -1,0 +1,219 @@
+UVM_INFO @ 0: reporter [RNTST] Running test error_test...
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_root.svh(641) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                         Type                    Size  Value
+----------------------------------------------------------------
+<unnamed>                    uvm_root                -     @71  
+  uvm_test_top               error_test              -     @142 
+    env                      afifo_env               -     @190 
+      m_cov                  uvm_component           -     @231 
+      m_rd_agent             afifo_rd_agent          -     @222 
+        m_drv                afifo_rd_driver         -     @420 
+          rsp_port           uvm_analysis_port       -     @439 
+          seq_item_port      uvm_seq_item_pull_port  -     @429 
+        m_mon                afifo_rd_monitor        -     @262 
+          ap                 uvm_analysis_port       -     @271 
+        m_seqr               uvm_sequencer           -     @283 
+          rsp_export         uvm_analysis_export     -     @292 
+          seq_item_export    uvm_seq_item_pull_imp   -     @410 
+          arbitration_queue  array                   0     -    
+          lock_queue         array                   0     -    
+          num_last_reqs      integral                32    'd1  
+          num_last_rsps      integral                32    'd1  
+      m_scb                  afifo_scoreboard        -     @240 
+        cov                  uvm_component           -     @491 
+        rd_imp               uvm_analysis_imp_read   -     @479 
+        wr_imp               uvm_analysis_imp_write  -     @469 
+      m_wr_agent             afifo_wr_agent          -     @213 
+        m_drv                afifo_wr_driver         -     @671 
+          rsp_port           uvm_analysis_port       -     @690 
+          seq_item_port      uvm_seq_item_pull_port  -     @680 
+        m_mon                afifo_wr_monitor        -     @513 
+          ap                 uvm_analysis_port       -     @522 
+        m_seqr               uvm_sequencer           -     @534 
+          rsp_export         uvm_analysis_export     -     @543 
+          seq_item_export    uvm_seq_item_pull_imp   -     @661 
+          arbitration_queue  array                   0     -    
+          lock_queue         array                   0     -    
+          num_last_reqs      integral                32    'd1  
+          num_last_rsps      integral                32    'd1  
+----------------------------------------------------------------
+UVM_INFO afifo_test_lib.svh(27) @ 0: uvm_test_top [error_test] start of simulation for uvm_test_top
+UVM_INFO afifo_seq_lib.svh(160) @ 40: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #0 with Data: 0xf1761e81 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 50: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xf1761e81
+UVM_INFO afifo_wr_monitor.svh(38) @ 50: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xf1761e81
+UVM_INFO afifo_scoreboard.svh(51) @ 50: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xf1761e81
+UVM_INFO afifo_seq_lib.svh(160) @ 50: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #1 with Data: 0xe9084ed for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 60: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xe9084ed
+UVM_INFO afifo_wr_monitor.svh(38) @ 60: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xe9084ed
+UVM_INFO afifo_scoreboard.svh(51) @ 60: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xe9084ed
+UVM_INFO afifo_seq_lib.svh(160) @ 60: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #2 with Data: 0xef670df7 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 70: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xef670df7
+UVM_INFO afifo_wr_monitor.svh(38) @ 70: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xef670df7
+UVM_INFO afifo_scoreboard.svh(51) @ 70: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xef670df7
+UVM_INFO afifo_seq_lib.svh(160) @ 70: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #3 with Data: 0xb93fad56 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 80: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xb93fad56
+UVM_INFO afifo_wr_monitor.svh(38) @ 80: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xb93fad56
+UVM_INFO afifo_scoreboard.svh(51) @ 80: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xb93fad56
+UVM_INFO afifo_seq_lib.svh(160) @ 80: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #4 with Data: 0xf0abdc41 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 90: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xf0abdc41
+UVM_INFO afifo_wr_monitor.svh(38) @ 90: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xf0abdc41
+UVM_INFO afifo_scoreboard.svh(51) @ 90: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xf0abdc41
+UVM_INFO afifo_seq_lib.svh(160) @ 90: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #5 with Data: 0xba13582d for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 100: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xba13582d
+UVM_INFO afifo_wr_monitor.svh(38) @ 100: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xba13582d
+UVM_INFO afifo_scoreboard.svh(51) @ 100: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xba13582d
+UVM_INFO afifo_seq_lib.svh(160) @ 100: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #6 with Data: 0xc1503c58 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 110: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xc1503c58
+UVM_INFO afifo_wr_monitor.svh(38) @ 110: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xc1503c58
+UVM_INFO afifo_scoreboard.svh(51) @ 110: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xc1503c58
+UVM_INFO afifo_seq_lib.svh(160) @ 110: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #7 with Data: 0x82440685 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 120: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0x82440685
+UVM_INFO afifo_wr_monitor.svh(38) @ 120: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x82440685
+UVM_INFO afifo_scoreboard.svh(51) @ 120: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x82440685
+UVM_INFO afifo_seq_lib.svh(160) @ 120: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #8 with Data: 0x71cf6d83 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 130: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0x71cf6d83
+UVM_INFO afifo_wr_monitor.svh(38) @ 130: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x71cf6d83
+UVM_ERROR afifo_scoreboard.svh(45) @ 130: uvm_test_top.env.m_scb [SCB/WR_OVFL] Overflow: Attempted write to wfull FIFO. Data: 0x71cf6d83
+UVM_INFO afifo_seq_lib.svh(160) @ 130: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #9 with Data: 0x9485b03a for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 140: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0x9485b03a
+UVM_INFO afifo_wr_monitor.svh(38) @ 140: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x9485b03a
+UVM_ERROR afifo_scoreboard.svh(45) @ 140: uvm_test_top.env.m_scb [SCB/WR_OVFL] Overflow: Attempted write to wfull FIFO. Data: 0x9485b03a
+UVM_INFO afifo_seq_lib.svh(160) @ 140: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #10 with Data: 0xbea8bbfa for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 150: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xbea8bbfa
+UVM_INFO afifo_wr_monitor.svh(38) @ 150: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xbea8bbfa
+UVM_ERROR afifo_scoreboard.svh(45) @ 150: uvm_test_top.env.m_scb [SCB/WR_OVFL] Overflow: Attempted write to wfull FIFO. Data: 0xbea8bbfa
+UVM_INFO afifo_seq_lib.svh(160) @ 150: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #11 with Data: 0xc6aeb830 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 160: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xc6aeb830
+UVM_INFO afifo_wr_monitor.svh(38) @ 160: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xc6aeb830
+UVM_ERROR afifo_scoreboard.svh(45) @ 160: uvm_test_top.env.m_scb [SCB/WR_OVFL] Overflow: Attempted write to wfull FIFO. Data: 0xc6aeb830
+UVM_INFO afifo_seq_lib.svh(160) @ 160: uvm_test_top.env.m_wr_agent.m_seqr@@overflow_seq [SEQ/PKT] Pushing Err_packet #12 with Data: 0xc8c6fd67 for WRITE
+UVM_INFO afifo_wr_driver.svh(50) @ 170: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/OVFL] Overflow injected: 0xc8c6fd67
+UVM_INFO afifo_wr_monitor.svh(38) @ 170: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xc8c6fd67
+UVM_ERROR afifo_scoreboard.svh(45) @ 170: uvm_test_top.env.m_scb [SCB/WR_OVFL] Overflow: Attempted write to wfull FIFO. Data: 0xc8c6fd67
+UVM_INFO afifo_seq_lib.svh(160) @ 170: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #0 with Data: 0xb1a3db46 for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 180: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 180: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xf1761e81
+UVM_INFO afifo_scoreboard.svh(84) @ 180: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xf1761e81
+UVM_INFO afifo_seq_lib.svh(160) @ 180: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #1 with Data: 0x44aed8da for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 200: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xe9084ed
+UVM_INFO afifo_rd_monitor.svh(39) @ 200: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xe9084ed
+UVM_INFO afifo_scoreboard.svh(84) @ 200: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xe9084ed
+UVM_INFO afifo_seq_lib.svh(160) @ 200: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #2 with Data: 0x423d93c5 for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 220: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xef670df7
+UVM_INFO afifo_rd_monitor.svh(39) @ 220: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xef670df7
+UVM_INFO afifo_scoreboard.svh(84) @ 220: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xef670df7
+UVM_INFO afifo_seq_lib.svh(160) @ 220: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #3 with Data: 0xa0e9ed84 for  READ
+UVM_INFO afifo_rd_driver.svh(50) @ 240: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xb93fad56
+UVM_INFO afifo_rd_monitor.svh(39) @ 240: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xb93fad56
+UVM_INFO afifo_scoreboard.svh(84) @ 240: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xb93fad56
+UVM_INFO afifo_seq_lib.svh(160) @ 240: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #4 with Data: 0xc971ea5f for  READ
+UVM_INFO afifo_rd_driver.svh(50) @ 260: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf0abdc41
+UVM_INFO afifo_rd_monitor.svh(39) @ 260: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xf0abdc41
+UVM_INFO afifo_scoreboard.svh(84) @ 260: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xf0abdc41
+UVM_INFO afifo_seq_lib.svh(160) @ 260: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #5 with Data: 0x13938e31 for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 280: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xba13582d
+UVM_INFO afifo_rd_monitor.svh(39) @ 280: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xba13582d
+UVM_INFO afifo_scoreboard.svh(84) @ 280: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xba13582d
+UVM_INFO afifo_seq_lib.svh(160) @ 280: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #6 with Data: 0x8ea835cb for  READ
+UVM_INFO afifo_rd_driver.svh(50) @ 300: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xc1503c58
+UVM_INFO afifo_rd_monitor.svh(39) @ 300: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xc1503c58
+UVM_INFO afifo_scoreboard.svh(84) @ 300: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xc1503c58
+UVM_INFO afifo_seq_lib.svh(160) @ 300: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #7 with Data: 0x6be7be7a for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 320: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0x82440685
+UVM_INFO afifo_rd_monitor.svh(39) @ 320: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x82440685
+UVM_INFO afifo_scoreboard.svh(84) @ 320: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x82440685
+UVM_INFO afifo_seq_lib.svh(160) @ 320: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #8 with Data: 0x42c616b6 for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 340: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 340: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 340: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 340: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #9 with Data: 0xeb246444 for  READ
+UVM_INFO afifo_rd_driver.svh(50) @ 360: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 360: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 360: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 360: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #10 with Data: 0x98e9adf6 for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 380: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 380: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 380: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 380: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #11 with Data: 0xa5152fa8 for  READ
+UVM_INFO afifo_rd_driver.svh(50) @ 400: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 400: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 400: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 400: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #12 with Data: 0xa118e428 for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 420: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 420: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 420: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 420: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #13 with Data: 0xd0e31d7f for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 440: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 440: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 440: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 440: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #14 with Data: 0xbe67c5a9 for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 460: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 460: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 460: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 460: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #15 with Data: 0x37393219 for  READ
+UVM_INFO afifo_rd_driver.svh(50) @ 480: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 480: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 480: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 480: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #16 with Data: 0xc677da0d for WRITE
+UVM_INFO afifo_rd_driver.svh(50) @ 500: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 500: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 500: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_seq_lib.svh(160) @ 500: uvm_test_top.env.m_rd_agent.m_seqr@@underflow_seq [SEQ/PKT] Pushing Err_packet #17 with Data: 0xb5ceed61 for  READ
+UVM_INFO afifo_rd_driver.svh(50) @ 520: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/UFLOW] Underflow injected: 0xf1761e81
+UVM_INFO afifo_rd_monitor.svh(39) @ 520: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x0
+UVM_ERROR afifo_scoreboard.svh(66) @ 520: uvm_test_top.env.m_scb [SCB/UNDFL] Underflow: Read from empty FIFO. Got: 0x0
+UVM_INFO afifo_coverage.svh(139) @ 2520: uvm_test_top.env.m_cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(140) @ 2520: uvm_test_top.env.m_cov [COV_REPORT] Coverage Summary for m_cov:
+UVM_INFO afifo_coverage.svh(141) @ 2520: uvm_test_top.env.m_cov [COV_REPORT]   Write Coverage:           25.00%
+UVM_INFO afifo_coverage.svh(142) @ 2520: uvm_test_top.env.m_cov [COV_REPORT]   Read Coverage:            62.50%
+UVM_INFO afifo_coverage.svh(143) @ 2520: uvm_test_top.env.m_cov [COV_REPORT]   FIFO Transitions Coverage: 100.00%
+UVM_INFO afifo_coverage.svh(144) @ 2520: uvm_test_top.env.m_cov [COV_REPORT]   Consecutive Ops Coverage:  75.00%
+UVM_INFO afifo_coverage.svh(145) @ 2520: uvm_test_top.env.m_cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(139) @ 2520: uvm_test_top.env.m_scb.cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(140) @ 2520: uvm_test_top.env.m_scb.cov [COV_REPORT] Coverage Summary for cov:
+UVM_INFO afifo_coverage.svh(141) @ 2520: uvm_test_top.env.m_scb.cov [COV_REPORT]   Write Coverage:           25.00%
+UVM_INFO afifo_coverage.svh(142) @ 2520: uvm_test_top.env.m_scb.cov [COV_REPORT]   Read Coverage:            62.50%
+UVM_INFO afifo_coverage.svh(143) @ 2520: uvm_test_top.env.m_scb.cov [COV_REPORT]   FIFO Transitions Coverage: 100.00%
+UVM_INFO afifo_coverage.svh(144) @ 2520: uvm_test_top.env.m_scb.cov [COV_REPORT]   Consecutive Ops Coverage:  75.00%
+UVM_INFO afifo_coverage.svh(145) @ 2520: uvm_test_top.env.m_scb.cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_scoreboard.svh(105) @ 2520: uvm_test_top.env.m_scb [SCB/REPORT] 
+
+--- ASYNC FIFO SCOREBOARD REPORT ---
+Total Writes:          8
+Total Reads:           18
+Successful Matches:    8
+Data Mismatches:       0
+FIFO Overflows:        5
+FIFO Underflows:       10
+-----------------------------------
+
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_report_server.svh(902) @ 2520: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  128
+UVM_WARNING :    0
+UVM_ERROR :   15
+UVM_FATAL :    0
+** Report counts by id
+[COV_REPORT]    14
+[MON]    31
+[RD_DRV/UFLOW]    18
+[RNTST]     1
+[SCB/MATCH]     8
+[SCB/REPORT]     1
+[SCB/UNDFL]    10
+[SCB/WR_OVFL]     5
+[SCB/WR_SUCC]     8
+[SEQ/PKT]    31
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[WR_DRV/OVFL]    13
+[error_test]     1
+
+$finish called from file "/apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_root.svh", line 586.
+$finish at simulation time                 2520
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2520 ns
+CPU Time:      0.650 seconds;       Data structure size:   0.6Mb
