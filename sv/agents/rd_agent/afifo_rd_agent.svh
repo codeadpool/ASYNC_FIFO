@@ -4,8 +4,8 @@
 class afifo_rd_agent extends uvm_agent;
   `uvm_component_utils(afifo_rd_agent)
 
-  virtual afifo_rd_driver_bfm   m_drv_bfm;
-  virtual afifo_rd_monitor_bfm  m_mon_bfm;
+  virtual afifo_rd_driver_bfm  #(afifo_tb_pkg::DATA_WIDTH)   m_drv_bfm;
+  virtual afifo_rd_monitor_bfm #(afifo_tb_pkg::DATA_WIDTH) 	 m_mon_bfm;
   afifo_rd_agent_cfg            m_agent_cfg;
   
   uvm_sequencer #(afifo_txn)    m_seqr;

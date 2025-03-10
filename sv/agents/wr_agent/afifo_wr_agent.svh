@@ -4,8 +4,8 @@
 class afifo_wr_agent extends uvm_agent;
   `uvm_component_utils(afifo_wr_agent)
   
-  virtual afifo_wr_driver_bfm #(afifo_tb_pkg::DATA_WIDTH, afifo_tb_pkg::ADDR_WIDTH) m_drv_bfm;
-  virtual afifo_wr_monitor_bfm#(afifo_tb_pkg::DATA_WIDTH, afifo_tb_pkg::ADDR_WIDTH) m_mon_bfm;
+  virtual afifo_wr_driver_bfm #(afifo_tb_pkg::DATA_WIDTH) m_drv_bfm;
+  virtual afifo_wr_monitor_bfm#(afifo_tb_pkg::DATA_WIDTH) m_mon_bfm;
   afifo_wr_agent_cfg 				m_agent_cfg;
   
   uvm_sequencer #(afifo_txn)	 	m_seqr;
@@ -50,4 +50,4 @@ class afifo_wr_agent extends uvm_agent;
   endfunction
 endclass
              
-`endif  
+`endif      

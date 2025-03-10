@@ -11,7 +11,6 @@ class afifo_coverage #(type T = afifo_txn) extends uvm_component;
     bit [DATA_WIDTH-1:0] prev_rdata = 0;  // Last successful read data
     op_t prev_txn_type;                   // Track consecutive operations
 
-    // Covergroups
     covergroup cg_write with function sample(bit full, bit [DATA_WIDTH-1:0] wdata, int fill_level);
         cp_full: coverpoint full {
             bins full     = {1};
@@ -113,7 +112,7 @@ class afifo_coverage #(type T = afifo_txn) extends uvm_component;
                 if (!t.wfull && current_fill_level < max_depth) begin
 //                     cg_data_transitions.sample(prev_wdata, t.wdata);
                     prev_wdata = t.wdata;
-                end
+                end           
               cg_write.sample(t.wfull, t.wdata, current_fill_level);
             end
             READ: begin
@@ -125,13 +124,25 @@ class afifo_coverage #(type T = afifo_txn) extends uvm_component;
             end
         endcase
 
-        // Track FIFO state transitions
+        // Trackng FIFO state transitions
         cg_fifo_transitions.sample(prev_fifo_count, current_fill_level);
         prev_fifo_count = current_fill_level;
 
-        // Track operation sequences
+        // track operation sequences
       	cg_consecutive_ops.sample(prev_txn_type, t.op_type);
         prev_txn_type = t.op_type;
+    endfunction
+      
+      virtual function void report_phase(uvm_phase phase);
+        super.report_phase(phase);
+
+        `uvm_info("COV_REPORT", "----------------------------------", UVM_MEDIUM)
+        `uvm_info("COV_REPORT", $sformatf("Coverage Summary for %s:", get_name()), UVM_MEDIUM)
+        `uvm_info("COV_REPORT", $sformatf("  Write Coverage:           %.2f%%", cg_write.get_coverage()), UVM_MEDIUM)
+        `uvm_info("COV_REPORT", $sformatf("  Read Coverage:            %.2f%%", cg_read.get_coverage()), UVM_MEDIUM)
+        `uvm_info("COV_REPORT", $sformatf("  FIFO Transitions Coverage: %.2f%%", cg_fifo_transitions.get_coverage()), UVM_MEDIUM)
+        `uvm_info("COV_REPORT", $sformatf("  Consecutive Ops Coverage:  %.2f%%", cg_consecutive_ops.get_coverage()), UVM_MEDIUM)
+        `uvm_info("COV_REPORT", "----------------------------------", UVM_MEDIUM)
     endfunction
 endclass
 

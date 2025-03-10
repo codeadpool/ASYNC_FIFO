@@ -1,7 +1,10 @@
+-v /home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg/afifo_txn_pkg.sv
 -v /home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg/afifo_env_pkg.sv
 -v /home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg/afifo_rd_agent_pkg.sv
 -v /home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg/afifo_wr_agent_pkg.sv
+-v /home/shadow-monarch/projects/ASYNC_FIFO/sv/pkg/afifo_tb_pkg.sv
 -v /home/shadow-monarch/projects/ASYNC_FIFO/sv/top/afifo_env_pkg.sv
+-v /home/shadow-monarch/projects/ASYNC_FIFO/tests/test_lib/afifo_test_pkg.sv
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/dut
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/agents/rd_agent
@@ -10,6 +13,8 @@
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/top
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb/bfm
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tests/seq_lib
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tests/test_lib
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/dut
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/agents/rd_agent
@@ -18,3 +23,5 @@
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/sv/top
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb
 +incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tb/bfm
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tests/seq_lib
++incdir+/home/shadow-monarch/projects/ASYNC_FIFO/tests/test_lib

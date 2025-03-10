@@ -1,64 +1,63 @@
 `ifndef AFIFO_RD_DRIVER_BFM_SV
 `define AFIFO_RD_DRIVER_BFM_SV
 
-interface afifo_rd_driver_bfm#(
-  parameter DATA_WIDTH = 32,
-  parameter ADDR_WIDTH = 8,
-  parameter MAX_EMPTY_RETRY = 10
-)(afifo_rd_if.drv_port bus);
+interface afifo_rd_driver_bfm #(
+  parameter int DATA_WIDTH = afifo_tb_pkg::DATA_WIDTH
+)(
+  input  logic rclk,
+  input  logic rempty,
+  input logic [DATA_WIDTH-1:0] rdata,
+  output logic rinc,
+  output logic rrst_n
+);
 
   import afifo_txn_pkg::*;
-  import afifo_rd_agent_pkg::*;
-  
-  typedef int unsigned retry_count_t;
-  afifo_rd_driver proxy;
+  import afifo_tb_pkg::*;
 
-  function set_proxy(afifo_rd_driver p);
-    proxy = p; 
-  endfunction
+  task automatic do_reset();
+    rrst_n <= 1'b0;
+    rinc <= '0;
+    repeat(2) @(posedge rclk);
+    rrst_n <= 1'b1;
+  endtask
 
-  task do_read(output logic [DATA_WIDTH-1:0] dout,
-              input bit err_inject,
-              input error_t err_type);
-    retry_count_t retry_count = 0;
-    
-    // Handle underflow error injection
-    if (err_inject && err_type == UNDERFLOW) begin
-      proxy.notify_underflow_attempt();
-      bus.rinc <= 1'b1;
-      @(posedge bus.rclk);
-      dout = bus.rdata;
-      bus.rinc <= 1'b0;
+  task automatic do_read(
+    output logic [DATA_WIDTH-1:0] dout,
+    input  error_t                err_type,
+    output rd_status_t            rd_status,
+    output int unsigned           retry_count
+  );
+    retry_count = 0;
+
+    // Error injection handling
+    if(err_type == UNDERFLOW) begin
+      rinc <= 1'b1;
+      @(posedge rclk);
+      dout = rdata;
+      rinc <= 1'b0;
+      rd_status = RD_UNDERFLOW;
       return;
     end
 
     // Normal read operation
     do begin
-      if(bus.rempty) begin
-        proxy.notify_empty();
+      if(rempty) begin
         retry_count++;
-        @(posedge bus.rclk);
+        @(posedge rclk);
       end
-    end while(bus.rempty && retry_count < MAX_EMPTY_RETRY);
+    end while(rempty && retry_count < afifo_tb_pkg::MAX_EMPTY_RETRY);
 
-    if(bus.rempty) begin
-      proxy.notify_read_timeout();
+    if(rempty) begin
+      rd_status = RD_TIMEOUT;
       dout = 'x;
       return;
     end
 
-    // Successful read
-    bus.rinc <= 1'b1;
-    @(posedge bus.rclk);
-    dout = bus.rdata;
-    bus.rinc <= 1'b0;
-  endtask
-
-  task do_reset();
-    bus.rrst_n <= 1'b0;
-    bus.rinc <= 'b0;
-    repeat(2) @(posedge bus.rclk);
-    bus.rrst_n <= 1'b1;
+    rinc <= 1'b1;
+    @(posedge rclk);
+    dout = rdata;
+    rinc <= 1'b0;
+    rd_status = RD_OK;
   endtask
 
 endinterface

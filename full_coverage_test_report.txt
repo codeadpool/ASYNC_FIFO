@@ -1,0 +1,244 @@
+UVM_INFO @ 0: reporter [RNTST] Running test full_coverage_test...
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_root.svh(641) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                         Type                    Size  Value
+----------------------------------------------------------------
+<unnamed>                    uvm_root                -     @71  
+  uvm_test_top               full_coverage_test      -     @142 
+    env                      afifo_env               -     @190 
+      m_cov                  uvm_component           -     @231 
+      m_rd_agent             afifo_rd_agent          -     @222 
+        m_drv                afifo_rd_driver         -     @420 
+          rsp_port           uvm_analysis_port       -     @439 
+          seq_item_port      uvm_seq_item_pull_port  -     @429 
+        m_mon                afifo_rd_monitor        -     @262 
+          ap                 uvm_analysis_port       -     @271 
+        m_seqr               uvm_sequencer           -     @283 
+          rsp_export         uvm_analysis_export     -     @292 
+          seq_item_export    uvm_seq_item_pull_imp   -     @410 
+          arbitration_queue  array                   0     -    
+          lock_queue         array                   0     -    
+          num_last_reqs      integral                32    'd1  
+          num_last_rsps      integral                32    'd1  
+      m_scb                  afifo_scoreboard        -     @240 
+        cov                  uvm_component           -     @491 
+        rd_imp               uvm_analysis_imp_read   -     @479 
+        wr_imp               uvm_analysis_imp_write  -     @469 
+      m_wr_agent             afifo_wr_agent          -     @213 
+        m_drv                afifo_wr_driver         -     @671 
+          rsp_port           uvm_analysis_port       -     @690 
+          seq_item_port      uvm_seq_item_pull_port  -     @680 
+        m_mon                afifo_wr_monitor        -     @513 
+          ap                 uvm_analysis_port       -     @522 
+        m_seqr               uvm_sequencer           -     @534 
+          rsp_export         uvm_analysis_export     -     @543 
+          seq_item_export    uvm_seq_item_pull_imp   -     @661 
+          arbitration_queue  array                   0     -    
+          lock_queue         array                   0     -    
+          num_last_reqs      integral                32    'd1  
+          num_last_rsps      integral                32    'd1  
+----------------------------------------------------------------
+UVM_INFO afifo_test_lib.svh(27) @ 0: uvm_test_top [full_coverage_test] start of simulation for uvm_test_top
+UVM_INFO afifo_seq_lib.svh(109) @ 40: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #0 with Data: 0xcdc572cb for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 50: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0xcdc572cb
+UVM_INFO afifo_wr_monitor.svh(38) @ 50: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xcdc572cb
+UVM_INFO afifo_scoreboard.svh(51) @ 50: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xcdc572cb
+UVM_INFO afifo_seq_lib.svh(109) @ 50: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #1 with Data: 0x9108a49e for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 60: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x9108a49e
+UVM_INFO afifo_wr_monitor.svh(38) @ 60: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x9108a49e
+UVM_INFO afifo_scoreboard.svh(51) @ 60: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x9108a49e
+UVM_INFO afifo_seq_lib.svh(109) @ 60: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #2 with Data: 0x3ef6b7a2 for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 70: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x3ef6b7a2
+UVM_INFO afifo_wr_monitor.svh(38) @ 70: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x3ef6b7a2
+UVM_INFO afifo_scoreboard.svh(51) @ 70: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x3ef6b7a2
+UVM_INFO afifo_seq_lib.svh(109) @ 70: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #3 with Data: 0x75c5b771 for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 80: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x75c5b771
+UVM_INFO afifo_wr_monitor.svh(38) @ 80: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x75c5b771
+UVM_INFO afifo_scoreboard.svh(51) @ 80: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x75c5b771
+UVM_INFO afifo_seq_lib.svh(109) @ 80: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #4 with Data: 0x2fd36a5b for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 90: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x2fd36a5b
+UVM_INFO afifo_wr_monitor.svh(38) @ 90: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x2fd36a5b
+UVM_INFO afifo_scoreboard.svh(51) @ 90: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x2fd36a5b
+UVM_INFO afifo_seq_lib.svh(109) @ 90: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #5 with Data: 0xa7fa1dad for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 100: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0xa7fa1dad
+UVM_INFO afifo_wr_monitor.svh(38) @ 100: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xa7fa1dad
+UVM_INFO afifo_scoreboard.svh(51) @ 100: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xa7fa1dad
+UVM_INFO afifo_seq_lib.svh(109) @ 100: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #6 with Data: 0x7a1efe0a for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 110: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x7a1efe0a
+UVM_INFO afifo_wr_monitor.svh(38) @ 110: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x7a1efe0a
+UVM_INFO afifo_scoreboard.svh(51) @ 110: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x7a1efe0a
+UVM_INFO afifo_seq_lib.svh(109) @ 110: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #7 with Data: 0x74fbd00d for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 120: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x74fbd00d
+UVM_INFO afifo_wr_monitor.svh(38) @ 120: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x74fbd00d
+UVM_INFO afifo_scoreboard.svh(51) @ 120: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x74fbd00d
+UVM_INFO afifo_seq_lib.svh(109) @ 120: uvm_test_top.env.m_wr_agent.m_seqr@@fseq [SEQ/PKT#] Pushing packet #8 with Data: 0x7b055bc1 for WRITE
+UVM_ERROR afifo_wr_driver.svh(52) @ 220: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x7b055bc1
+UVM_INFO afifo_seq_lib.svh(133) @ 220: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #0
+UVM_INFO afifo_rd_driver.svh(47) @ 240: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0xcdc572cb
+UVM_INFO afifo_rd_monitor.svh(39) @ 240: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xcdc572cb
+UVM_INFO afifo_scoreboard.svh(84) @ 240: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xcdc572cb
+UVM_INFO afifo_seq_lib.svh(133) @ 240: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #1
+UVM_INFO afifo_rd_driver.svh(47) @ 260: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x9108a49e
+UVM_INFO afifo_rd_monitor.svh(39) @ 260: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x9108a49e
+UVM_INFO afifo_scoreboard.svh(84) @ 260: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x9108a49e
+UVM_INFO afifo_seq_lib.svh(133) @ 260: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #2
+UVM_INFO afifo_rd_driver.svh(47) @ 280: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x3ef6b7a2
+UVM_INFO afifo_rd_monitor.svh(39) @ 280: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x3ef6b7a2
+UVM_INFO afifo_scoreboard.svh(84) @ 280: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x3ef6b7a2
+UVM_INFO afifo_seq_lib.svh(133) @ 280: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #3
+UVM_INFO afifo_rd_driver.svh(47) @ 300: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x75c5b771
+UVM_INFO afifo_rd_monitor.svh(39) @ 300: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x75c5b771
+UVM_INFO afifo_scoreboard.svh(84) @ 300: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x75c5b771
+UVM_INFO afifo_seq_lib.svh(133) @ 300: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #4
+UVM_INFO afifo_rd_driver.svh(47) @ 320: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x2fd36a5b
+UVM_INFO afifo_rd_monitor.svh(39) @ 320: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x2fd36a5b
+UVM_INFO afifo_scoreboard.svh(84) @ 320: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x2fd36a5b
+UVM_INFO afifo_seq_lib.svh(133) @ 320: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #5
+UVM_INFO afifo_rd_driver.svh(47) @ 340: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0xa7fa1dad
+UVM_INFO afifo_rd_monitor.svh(39) @ 340: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xa7fa1dad
+UVM_INFO afifo_scoreboard.svh(84) @ 340: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xa7fa1dad
+UVM_INFO afifo_seq_lib.svh(133) @ 340: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #6
+UVM_INFO afifo_rd_driver.svh(47) @ 360: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x7a1efe0a
+UVM_INFO afifo_rd_monitor.svh(39) @ 360: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x7a1efe0a
+UVM_INFO afifo_scoreboard.svh(84) @ 360: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x7a1efe0a
+UVM_INFO afifo_seq_lib.svh(133) @ 360: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #7
+UVM_INFO afifo_rd_driver.svh(47) @ 380: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x74fbd00d
+UVM_INFO afifo_rd_monitor.svh(39) @ 380: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x74fbd00d
+UVM_INFO afifo_scoreboard.svh(84) @ 380: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x74fbd00d
+UVM_INFO afifo_seq_lib.svh(133) @ 380: uvm_test_top.env.m_rd_agent.m_seqr@@eseq [SEQ/PKT] READ PKT #8
+UVM_ERROR afifo_rd_driver.svh(52) @ 580: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV/TMOUT] Timeout after 10 retries
+UVM_INFO afifo_seq_lib.svh(188) @ 580: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #0 with Data: 0x1
+UVM_INFO afifo_wr_driver.svh(46) @ 590: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x1
+UVM_INFO afifo_wr_monitor.svh(38) @ 590: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x1
+UVM_INFO afifo_scoreboard.svh(51) @ 590: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x1
+UVM_INFO afifo_seq_lib.svh(188) @ 590: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #1 with Data: 0x2
+UVM_INFO afifo_wr_driver.svh(46) @ 600: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x2
+UVM_INFO afifo_wr_monitor.svh(38) @ 600: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x2
+UVM_INFO afifo_scoreboard.svh(51) @ 600: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x2
+UVM_INFO afifo_seq_lib.svh(188) @ 600: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #2 with Data: 0x4
+UVM_INFO afifo_wr_driver.svh(46) @ 610: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x4
+UVM_INFO afifo_wr_monitor.svh(38) @ 610: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x4
+UVM_INFO afifo_scoreboard.svh(51) @ 610: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x4
+UVM_INFO afifo_seq_lib.svh(188) @ 610: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #3 with Data: 0x8
+UVM_INFO afifo_wr_driver.svh(46) @ 620: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x8
+UVM_INFO afifo_wr_monitor.svh(38) @ 620: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x8
+UVM_INFO afifo_scoreboard.svh(51) @ 620: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x8
+UVM_INFO afifo_seq_lib.svh(188) @ 620: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #4 with Data: 0x10
+UVM_INFO afifo_wr_driver.svh(46) @ 630: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x10
+UVM_INFO afifo_wr_monitor.svh(38) @ 630: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x10
+UVM_INFO afifo_scoreboard.svh(51) @ 630: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x10
+UVM_INFO afifo_seq_lib.svh(188) @ 630: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #5 with Data: 0x20
+UVM_INFO afifo_wr_driver.svh(46) @ 640: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x20
+UVM_INFO afifo_wr_monitor.svh(38) @ 640: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x20
+UVM_INFO afifo_scoreboard.svh(51) @ 640: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x20
+UVM_INFO afifo_seq_lib.svh(188) @ 640: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #6 with Data: 0x40
+UVM_INFO afifo_wr_driver.svh(46) @ 650: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x40
+UVM_INFO afifo_wr_monitor.svh(38) @ 650: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x40
+UVM_INFO afifo_scoreboard.svh(51) @ 650: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x40
+UVM_INFO afifo_seq_lib.svh(188) @ 650: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #7 with Data: 0x80
+UVM_INFO afifo_wr_driver.svh(46) @ 660: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x80
+UVM_INFO afifo_wr_monitor.svh(38) @ 660: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x80
+UVM_INFO afifo_scoreboard.svh(51) @ 660: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x80
+UVM_INFO afifo_seq_lib.svh(188) @ 660: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #8 with Data: 0x100
+UVM_ERROR afifo_wr_driver.svh(52) @ 760: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x100
+UVM_INFO afifo_seq_lib.svh(188) @ 760: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #9 with Data: 0x200
+UVM_ERROR afifo_wr_driver.svh(52) @ 860: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x200
+UVM_INFO afifo_seq_lib.svh(188) @ 860: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #10 with Data: 0x400
+UVM_ERROR afifo_wr_driver.svh(52) @ 960: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x400
+UVM_INFO afifo_seq_lib.svh(188) @ 960: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #11 with Data: 0x800
+UVM_ERROR afifo_wr_driver.svh(52) @ 1060: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x800
+UVM_INFO afifo_seq_lib.svh(188) @ 1060: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #12 with Data: 0x1000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1160: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x1000
+UVM_INFO afifo_seq_lib.svh(188) @ 1160: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #13 with Data: 0x2000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1260: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x2000
+UVM_INFO afifo_seq_lib.svh(188) @ 1260: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #14 with Data: 0x4000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1360: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x4000
+UVM_INFO afifo_seq_lib.svh(188) @ 1360: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #15 with Data: 0x8000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1460: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x8000
+UVM_INFO afifo_seq_lib.svh(188) @ 1460: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #16 with Data: 0x10000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1560: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x10000
+UVM_INFO afifo_seq_lib.svh(188) @ 1560: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #17 with Data: 0x20000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1660: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x20000
+UVM_INFO afifo_seq_lib.svh(188) @ 1660: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #18 with Data: 0x40000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1760: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x40000
+UVM_INFO afifo_seq_lib.svh(188) @ 1760: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #19 with Data: 0x80000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1860: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x80000
+UVM_INFO afifo_seq_lib.svh(188) @ 1860: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #20 with Data: 0x100000
+UVM_ERROR afifo_wr_driver.svh(52) @ 1960: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x100000
+UVM_INFO afifo_seq_lib.svh(188) @ 1960: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #21 with Data: 0x200000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2060: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x200000
+UVM_INFO afifo_seq_lib.svh(188) @ 2060: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #22 with Data: 0x400000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2160: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x400000
+UVM_INFO afifo_seq_lib.svh(188) @ 2160: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #23 with Data: 0x800000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2260: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x800000
+UVM_INFO afifo_seq_lib.svh(188) @ 2260: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #24 with Data: 0x1000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2360: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x1000000
+UVM_INFO afifo_seq_lib.svh(188) @ 2360: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #25 with Data: 0x2000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2460: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x2000000
+UVM_INFO afifo_seq_lib.svh(188) @ 2460: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #26 with Data: 0x4000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2560: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x4000000
+UVM_INFO afifo_seq_lib.svh(188) @ 2560: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #27 with Data: 0x8000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2660: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x8000000
+UVM_INFO afifo_seq_lib.svh(188) @ 2660: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #28 with Data: 0x10000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2760: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x10000000
+UVM_INFO afifo_seq_lib.svh(188) @ 2760: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #29 with Data: 0x20000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2860: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x20000000
+UVM_INFO afifo_seq_lib.svh(188) @ 2860: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #30 with Data: 0x40000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 2960: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x40000000
+UVM_INFO afifo_seq_lib.svh(188) @ 2960: uvm_test_top.env.m_wr_agent.m_seqr@@wseq [SEQ/PKT] Pushing walking 1's packet #31 with Data: 0x80000000
+UVM_ERROR afifo_wr_driver.svh(52) @ 3060: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV/TMOUT] Timeout after 10 retries on 0x80000000
+UVM_INFO afifo_coverage.svh(139) @ 5060: uvm_test_top.env.m_cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(140) @ 5060: uvm_test_top.env.m_cov [COV_REPORT] Coverage Summary for m_cov:
+UVM_INFO afifo_coverage.svh(141) @ 5060: uvm_test_top.env.m_cov [COV_REPORT]   Write Coverage:           25.00%
+UVM_INFO afifo_coverage.svh(142) @ 5060: uvm_test_top.env.m_cov [COV_REPORT]   Read Coverage:            50.00%
+UVM_INFO afifo_coverage.svh(143) @ 5060: uvm_test_top.env.m_cov [COV_REPORT]   FIFO Transitions Coverage: 83.33%
+UVM_INFO afifo_coverage.svh(144) @ 5060: uvm_test_top.env.m_cov [COV_REPORT]   Consecutive Ops Coverage:  100.00%
+UVM_INFO afifo_coverage.svh(145) @ 5060: uvm_test_top.env.m_cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(139) @ 5060: uvm_test_top.env.m_scb.cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(140) @ 5060: uvm_test_top.env.m_scb.cov [COV_REPORT] Coverage Summary for cov:
+UVM_INFO afifo_coverage.svh(141) @ 5060: uvm_test_top.env.m_scb.cov [COV_REPORT]   Write Coverage:           25.00%
+UVM_INFO afifo_coverage.svh(142) @ 5060: uvm_test_top.env.m_scb.cov [COV_REPORT]   Read Coverage:            50.00%
+UVM_INFO afifo_coverage.svh(143) @ 5060: uvm_test_top.env.m_scb.cov [COV_REPORT]   FIFO Transitions Coverage: 83.33%
+UVM_INFO afifo_coverage.svh(144) @ 5060: uvm_test_top.env.m_scb.cov [COV_REPORT]   Consecutive Ops Coverage:  100.00%
+UVM_INFO afifo_coverage.svh(145) @ 5060: uvm_test_top.env.m_scb.cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_scoreboard.svh(105) @ 5060: uvm_test_top.env.m_scb [SCB/REPORT] 
+
+--- ASYNC FIFO SCOREBOARD REPORT ---
+Total Writes:          16
+Total Reads:           8
+Successful Matches:    8
+Data Mismatches:       0
+FIFO Overflows:        0
+FIFO Underflows:       0
+-----------------------------------
+
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_report_server.svh(902) @ 5060: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  141
+UVM_WARNING :    0
+UVM_ERROR :   26
+UVM_FATAL :    0
+** Report counts by id
+[COV_REPORT]    14
+[MON]    24
+[RD_DRV]     8
+[RD_DRV/TMOUT]     1
+[RNTST]     1
+[SCB/MATCH]     8
+[SCB/REPORT]     1
+[SCB/WR_SUCC]    16
+[SEQ/PKT]    41
+[SEQ/PKT#]     9
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[WR_DRV]    16
+[WR_DRV/TMOUT]    25
+[full_coverage_test]     1
+
+$finish called from file "/apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_root.svh", line 586.
+$finish at simulation time                 5060
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 5060 ns
+CPU Time:      0.640 seconds;       Data structure size:   0.6Mb

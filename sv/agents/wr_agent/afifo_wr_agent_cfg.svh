@@ -1,8 +1,5 @@
 class afifo_wr_agent_cfg extends uvm_object;
   `uvm_object_utils(afifo_wr_agent_cfg)
-  int DATA_WIDTH = 32;
-  int ADDR_WIDTH = 8;
- 
   uvm_active_passive_enum is_active = UVM_ACTIVE;
   
   rand int min_wr_delay = 0;  // Minimum delay between writes

@@ -55,7 +55,6 @@ class afifo_scoreboard extends uvm_scoreboard;
      `uvm_error("SCB/WR_IGN", "Write attempt ignored (FIFO wfull)")
     end
     
-    // Sample coverage for all write attempts
     cov.sample(tr, write_queue.size());
   endfunction
 
@@ -76,7 +75,6 @@ class afifo_scoreboard extends uvm_scoreboard;
             DATA_WIDTH, $bits(tr.rdata)))
         end
         
-        // Data content comparison
         if (tr.rdata !== expected) begin
           `uvm_error("SCB/MISMTCH", $sformatf("Data mismatch!\nExp: 0x%0h\nAct: 0x%0h", 
             expected, tr.rdata))
@@ -92,50 +90,9 @@ class afifo_scoreboard extends uvm_scoreboard;
       `uvm_info("SCB/RDIGN", "Read attempt ignored (FIFO empty)", UVM_MEDIUM)
     end
     
-    // Sample coverage for all read attempts
     cov.sample(tr, write_queue.size());
   endfunction
   
-//   function void write_write(afifo_txn tr);
-//   if (write_queue.size() >= max_fifo_depth) begin
-//     if (!tr.wfull) begin
-//       `uvm_error("SCB/OVFL", $sformatf("Overflow: Model full but DUT wfull not asserted. Data: 0x%0h", tr.wdata))
-//     end
-//     num_overflows++;
-//   end else begin
-//     write_queue.push_back(tr.wdata);
-//     num_writes++;
-//     `uvm_info("SCB/WRITE", $sformatf("Stored data: 0x%0h", tr.wdata), UVM_MEDIUM)
-//     if (tr.wfull) begin
-//       `uvm_error("SCB/WFULL", "DUT asserted wfull incorrectly when model isn't full")
-//     end
-//   end
-//   cov.sample(tr, write_queue.size());
-// endfunction
-
-// function void write_read(afifo_txn tr);
-//   if (write_queue.size() == 0) begin
-//     if (!tr.rempty) begin
-//       `uvm_error("SCB/UNDFL", $sformatf("Underflow: Model empty but DUT rempty not asserted. Data: 0x%0h", tr.rdata))
-//     end
-//     num_underflows++;
-//   end else begin
-//     bit [DATA_WIDTH-1:0] expected = write_queue.pop_front();
-//     num_reads++;
-//     if (tr.rempty) begin
-//       `uvm_error("SCB/REMPTY", "DUT asserted rempty incorrectly when model isn't empty")
-//     end
-//     if (tr.rdata !== expected) begin
-//       `uvm_error("SCB/MISMTCH", $sformatf("Data mismatch!\nExp: 0x%0h\nAct: 0x%0h", expected, tr.rdata))
-//       num_mismatches++;
-//     end else begin
-//       `uvm_info("SCB/MATCH", $sformatf("Data match: 0x%0h", tr.rdata), UVM_MEDIUM)
-//       num_matches++;
-//     end
-//   end
-//   cov.sample(tr, write_queue.size());
-// endfunction
-
   function void report_phase(uvm_phase phase);
     string report = "\n\n--- ASYNC FIFO SCOREBOARD REPORT ---\n";
     report = {report, $sformatf("Total Writes:          %0d\n", num_writes)};
@@ -146,9 +103,6 @@ class afifo_scoreboard extends uvm_scoreboard;
     report = {report, $sformatf("FIFO Underflows:       %0d\n", num_underflows)};
     report = {report, "-----------------------------------\n"};
     `uvm_info("SCB/REPORT", report, UVM_LOW)
-    
-    // Final coverage report
-    cov.report_phase(phase);
   endfunction
 endclass
 

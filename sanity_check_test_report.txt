@@ -1,0 +1,133 @@
+UVM_INFO @ 0: reporter [RNTST] Running test sanity_check_test...
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_root.svh(641) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                         Type                    Size  Value
+----------------------------------------------------------------
+<unnamed>                    uvm_root                -     @71  
+  uvm_test_top               sanity_check_test       -     @142 
+    env                      afifo_env               -     @190 
+      m_cov                  uvm_component           -     @231 
+      m_rd_agent             afifo_rd_agent          -     @222 
+        m_drv                afifo_rd_driver         -     @420 
+          rsp_port           uvm_analysis_port       -     @439 
+          seq_item_port      uvm_seq_item_pull_port  -     @429 
+        m_mon                afifo_rd_monitor        -     @262 
+          ap                 uvm_analysis_port       -     @271 
+        m_seqr               uvm_sequencer           -     @283 
+          rsp_export         uvm_analysis_export     -     @292 
+          seq_item_export    uvm_seq_item_pull_imp   -     @410 
+          arbitration_queue  array                   0     -    
+          lock_queue         array                   0     -    
+          num_last_reqs      integral                32    'd1  
+          num_last_rsps      integral                32    'd1  
+      m_scb                  afifo_scoreboard        -     @240 
+        cov                  uvm_component           -     @491 
+        rd_imp               uvm_analysis_imp_read   -     @479 
+        wr_imp               uvm_analysis_imp_write  -     @469 
+      m_wr_agent             afifo_wr_agent          -     @213 
+        m_drv                afifo_wr_driver         -     @671 
+          rsp_port           uvm_analysis_port       -     @690 
+          seq_item_port      uvm_seq_item_pull_port  -     @680 
+        m_mon                afifo_wr_monitor        -     @513 
+          ap                 uvm_analysis_port       -     @522 
+        m_seqr               uvm_sequencer           -     @534 
+          rsp_export         uvm_analysis_export     -     @543 
+          seq_item_export    uvm_seq_item_pull_imp   -     @661 
+          arbitration_queue  array                   0     -    
+          lock_queue         array                   0     -    
+          num_last_reqs      integral                32    'd1  
+          num_last_rsps      integral                32    'd1  
+----------------------------------------------------------------
+UVM_INFO afifo_test_lib.svh(27) @ 0: uvm_test_top [sanity_check_test] start of simulation for uvm_test_top
+UVM_INFO afifo_vseq_lib.svh(41) @ 0: reporter@@vseq [VSEQ/START] Creating the Virtual Sequence
+UVM_INFO afifo_seq_lib.svh(50) @ 0: uvm_test_top.env.m_wr_agent.m_seqr@@wr_seq [SEQ/START] Starting Simple Write Sequence
+UVM_INFO afifo_seq_lib.svh(59) @ 40: uvm_test_top.env.m_wr_agent.m_seqr@@wr_seq [SEQ/PKT#] Pushing packet #0 with Data: 0xbb08687 for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 50: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0xbb08687
+UVM_INFO afifo_wr_monitor.svh(38) @ 50: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0xbb08687
+UVM_INFO afifo_scoreboard.svh(51) @ 50: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0xbb08687
+UVM_INFO afifo_seq_lib.svh(59) @ 50: uvm_test_top.env.m_wr_agent.m_seqr@@wr_seq [SEQ/PKT#] Pushing packet #1 with Data: 0x789574f9 for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 60: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x789574f9
+UVM_INFO afifo_wr_monitor.svh(38) @ 60: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x789574f9
+UVM_INFO afifo_scoreboard.svh(51) @ 60: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x789574f9
+UVM_INFO afifo_seq_lib.svh(59) @ 60: uvm_test_top.env.m_wr_agent.m_seqr@@wr_seq [SEQ/PKT#] Pushing packet #2 with Data: 0x32e8e663 for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 70: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x32e8e663
+UVM_INFO afifo_wr_monitor.svh(38) @ 70: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x32e8e663
+UVM_INFO afifo_scoreboard.svh(51) @ 70: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x32e8e663
+UVM_INFO afifo_seq_lib.svh(59) @ 70: uvm_test_top.env.m_wr_agent.m_seqr@@wr_seq [SEQ/PKT#] Pushing packet #3 with Data: 0x2477534f for WRITE
+UVM_INFO afifo_wr_driver.svh(46) @ 80: uvm_test_top.env.m_wr_agent.m_drv [WR_DRV] Wrote data: 0x2477534f
+UVM_INFO afifo_wr_monitor.svh(38) @ 80: uvm_test_top.env.m_wr_agent.m_mon [MON] Observed write: 0x2477534f
+UVM_INFO afifo_scoreboard.svh(51) @ 80: uvm_test_top.env.m_scb [SCB/WR_SUCC] Stored data: 0x2477534f
+UVM_INFO afifo_seq_lib.svh(73) @ 80: uvm_test_top.env.m_rd_agent.m_seqr@@rd_seq [SEQ/START] Starting Simple Read Sequence
+UVM_INFO afifo_seq_lib.svh(82) @ 80: uvm_test_top.env.m_rd_agent.m_seqr@@rd_seq [SEQ/PKT] READ PKT #0 
+UVM_INFO afifo_rd_driver.svh(45) @ 140: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Success after 2 retries: Read 0xbb08687
+UVM_INFO afifo_rd_monitor.svh(39) @ 140: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0xbb08687
+UVM_INFO afifo_scoreboard.svh(84) @ 140: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0xbb08687
+UVM_INFO afifo_seq_lib.svh(82) @ 140: uvm_test_top.env.m_rd_agent.m_seqr@@rd_seq [SEQ/PKT] READ PKT #1 
+UVM_INFO afifo_rd_driver.svh(47) @ 160: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x789574f9
+UVM_INFO afifo_rd_monitor.svh(39) @ 160: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x789574f9
+UVM_INFO afifo_scoreboard.svh(84) @ 160: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x789574f9
+UVM_INFO afifo_seq_lib.svh(82) @ 160: uvm_test_top.env.m_rd_agent.m_seqr@@rd_seq [SEQ/PKT] READ PKT #2 
+UVM_INFO afifo_rd_driver.svh(47) @ 180: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x32e8e663
+UVM_INFO afifo_rd_monitor.svh(39) @ 180: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x32e8e663
+UVM_INFO afifo_scoreboard.svh(84) @ 180: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x32e8e663
+UVM_INFO afifo_seq_lib.svh(82) @ 180: uvm_test_top.env.m_rd_agent.m_seqr@@rd_seq [SEQ/PKT] READ PKT #3 
+UVM_INFO afifo_rd_driver.svh(47) @ 200: uvm_test_top.env.m_rd_agent.m_drv [RD_DRV] Read data: 0x2477534f
+UVM_INFO afifo_rd_monitor.svh(39) @ 200: uvm_test_top.env.m_rd_agent.m_mon [MON] Observed read: 0x2477534f
+UVM_INFO afifo_scoreboard.svh(84) @ 200: uvm_test_top.env.m_scb [SCB/MATCH] Data match: 0x2477534f
+UVM_INFO afifo_vseq_lib.svh(52) @ 200: reporter@@vseq [VSEQ/STOP] Ending the Vritual Sequenece
+UVM_INFO afifo_coverage.svh(139) @ 2200: uvm_test_top.env.m_cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(140) @ 2200: uvm_test_top.env.m_cov [COV_REPORT] Coverage Summary for m_cov:
+UVM_INFO afifo_coverage.svh(141) @ 2200: uvm_test_top.env.m_cov [COV_REPORT]   Write Coverage:           25.00%
+UVM_INFO afifo_coverage.svh(142) @ 2200: uvm_test_top.env.m_cov [COV_REPORT]   Read Coverage:            50.00%
+UVM_INFO afifo_coverage.svh(143) @ 2200: uvm_test_top.env.m_cov [COV_REPORT]   FIFO Transitions Coverage: 83.33%
+UVM_INFO afifo_coverage.svh(144) @ 2200: uvm_test_top.env.m_cov [COV_REPORT]   Consecutive Ops Coverage:  75.00%
+UVM_INFO afifo_coverage.svh(145) @ 2200: uvm_test_top.env.m_cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(139) @ 2200: uvm_test_top.env.m_scb.cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_coverage.svh(140) @ 2200: uvm_test_top.env.m_scb.cov [COV_REPORT] Coverage Summary for cov:
+UVM_INFO afifo_coverage.svh(141) @ 2200: uvm_test_top.env.m_scb.cov [COV_REPORT]   Write Coverage:           25.00%
+UVM_INFO afifo_coverage.svh(142) @ 2200: uvm_test_top.env.m_scb.cov [COV_REPORT]   Read Coverage:            50.00%
+UVM_INFO afifo_coverage.svh(143) @ 2200: uvm_test_top.env.m_scb.cov [COV_REPORT]   FIFO Transitions Coverage: 83.33%
+UVM_INFO afifo_coverage.svh(144) @ 2200: uvm_test_top.env.m_scb.cov [COV_REPORT]   Consecutive Ops Coverage:  75.00%
+UVM_INFO afifo_coverage.svh(145) @ 2200: uvm_test_top.env.m_scb.cov [COV_REPORT] ----------------------------------
+UVM_INFO afifo_scoreboard.svh(105) @ 2200: uvm_test_top.env.m_scb [SCB/REPORT] 
+
+--- ASYNC FIFO SCOREBOARD REPORT ---
+Total Writes:          4
+Total Reads:           4
+Successful Matches:    4
+Data Mismatches:       0
+FIFO Overflows:        0
+FIFO Underflows:       0
+-----------------------------------
+
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_report_server.svh(902) @ 2200: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   55
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[COV_REPORT]    14
+[MON]     8
+[RD_DRV]     4
+[RNTST]     1
+[SCB/MATCH]     4
+[SCB/REPORT]     1
+[SCB/WR_SUCC]     4
+[SEQ/PKT]     4
+[SEQ/PKT#]     4
+[SEQ/START]     2
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[VSEQ/START]     1
+[VSEQ/STOP]     1
+[WR_DRV]     4
+[sanity_check_test]     1
+
+$finish called from file "/apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_root.svh", line 586.
+$finish at simulation time                 2200
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2200 ns
+CPU Time:      0.550 seconds;       Data structure size:   0.6Mb

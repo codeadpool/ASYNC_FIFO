@@ -1,72 +1,61 @@
 `ifndef AFIFO_WR_DRIVER_BFM_SV
 `define AFIFO_WR_DRIVER_BFM_SV
 
-interface afifo_wr_driver_bfm#(
-  parameter DATA_WIDTH = afifo_tb_pkg::DATA_WIDTH,
-  parameter ADDR_WIDTH = afifo_tb_pkg::ADDR_WIDTH
-)(afifo_wr_if.drv_port bus);
-  
+interface afifo_wr_driver_bfm #(
+  parameter int DATA_WIDTH = afifo_tb_pkg::DATA_WIDTH
+)(
+  input  logic wclk,
+  output logic wrst_n,
+  input  logic wfull,
+  output logic winc,
+  output logic [DATA_WIDTH-1:0] wdata
+);
   import afifo_txn_pkg::*;
-  import afifo_wr_agent_pkg::*;
-  
-  localparam MAX_FULL_RETRY = 10;
-  // Typedefs and local parameters
-  typedef int unsigned retry_count_t;
-  afifo_wr_driver proxy;
-  
-  function set_proxy(afifo_wr_driver p);
-    proxy = p; 
-  endfunction
+  import afifo_tb_pkg::*;
 
-  function bit is_full();
-    return bus.wfull;
-  endfunction
-
-  task do_write(input [DATA_WIDTH-1:0] write_data, 
-               input bit              err_inject,
-               input error_t          err_type);
-    retry_count_t retry_count = 0;
+  task automatic do_write(
+    input  logic [DATA_WIDTH-1:0] data_in,
+    input  error_t                err_type,
+    output wr_status_t         	  wr_status,
+    output int unsigned           retry_count
+  );
+    retry_count = 0;
     
-    // Error injection handling
-    if (err_inject && err_type == OVERFLOW) begin
-      proxy.notify_overflow_attempt(write_data);
-      bus.winc  <= 1'b1;
-      bus.wdata <= write_data;
-      @(posedge bus.wclk);
-      bus.winc  <= 1'b0;
+    // Error injection
+    if (err_type == OVERFLOW) begin
+      winc  <= 1'b1;
+      wdata <= data_in;  
+      @(posedge wclk);
+      winc  <= 1'b0;
+      wr_status = WR_OVERFLOW;
       return;
     end
 
-    // Normal write operation
+    // Normal write
     do begin
-      if(bus.wfull) begin
-        proxy.notify_full(write_data, retry_count);
+      if(wfull) begin
         retry_count++;
-        @(posedge bus.wclk);
+        @(posedge wclk);
       end
-    end while(bus.wfull && retry_count < MAX_FULL_RETRY);
+    end while(wfull && retry_count < afifo_tb_pkg::MAX_FULL_RETRY);
 
-    // Post-retry handling
-    if(bus.wfull) begin
-      proxy.notify_write_timeout(write_data, retry_count);
+    if(wfull) begin
+      wr_status = WR_TIMEOUT;
       return;
     end
 
-    // Successful write
-    bus.winc  <= 1'b1;
-    bus.wdata <= write_data;
-    @(posedge bus.wclk);
-    bus.winc  <= 1'b0;
-    proxy.notify_write_success(write_data);
+    winc  <= 1'b1;
+    wdata <= data_in;  
+    @(posedge wclk);
+    winc  <= 1'b0;
+    wr_status = WR_OK;
   endtask
 
-  task do_reset();
-    bus.wrst_n <= 1'b0;
-    bus.winc   <= 'b0;
-    repeat (4) @(posedge bus.wclk);
-    bus.wrst_n <= 1'b1;
-    proxy.notify_reset_done();
+  task automatic do_reset();
+    wrst_n <= 1'b0;
+    winc   <= 'b0;
+    repeat (4) @(posedge wclk);
+    wrst_n <= 1'b1;
   endtask
-
 endinterface
 `endif

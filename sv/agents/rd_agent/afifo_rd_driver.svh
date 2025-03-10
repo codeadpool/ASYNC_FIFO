@@ -2,43 +2,56 @@
 `define AFIFO_RD_DRIVER_SVH
 
 class afifo_rd_driver extends uvm_driver #(afifo_txn);
-  virtual afifo_rd_driver_bfm bfm;
   `uvm_component_utils(afifo_rd_driver)
+  
+  virtual afifo_rd_driver_bfm bfm;
 
-  function new(string name = "afifo_rd_driver", uvm_component parent);
+  function new(string name, uvm_component parent);
     super.new(name, parent);
   endfunction
 
-  virtual function void build_phase(uvm_phase phase);
+  function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     if(!uvm_config_db#(virtual afifo_rd_driver_bfm)::get(this, "", "rd_drv_bfm", bfm))
-      `uvm_fatal("RD_DRV/CFG_ERR", "Failed to get BFM")
-    bfm.set_proxy(this);
+      `uvm_fatal("CFG", "BFM not found")
   endfunction
 
   task run_phase(uvm_phase phase);
+    afifo_tb_pkg::rd_status_t rd_status;
+    int unsigned retry_count;
+    logic [afifo_tb_pkg::DATA_WIDTH-1:0] rd_data;
+    
     bfm.do_reset();
-    `uvm_info("RD_DRV/RST", "FIFO Reset Done from READ Side", UVM_MEDIUM)
+    
     forever begin
-      afifo_txn txn;
-      logic [bfm.DATA_WIDTH-1:0] rd_data;
-      seq_item_port.get_next_item(txn);
-      bfm.do_read(rd_data, txn.err_inject, txn.err_type);
-      txn.rdata = rd_data;
-      seq_item_port.item_done(txn);
+      seq_item_port.get_next_item(req);
+      bfm.do_read(rd_data, req.err_type, rd_status, retry_count);
+      handle_transaction(req, rd_data, rd_status, retry_count);
+      seq_item_port.item_done();
     end
   endtask
 
-  function void notify_empty();
-    `uvm_info("EMPTY", "FIFO is empty", UVM_MEDIUM)
-  endfunction
-
-  function void notify_underflow_attempt();
-    `uvm_info("UNDERFLOW", "Attempting read from empty FIFO", UVM_MEDIUM)
-  endfunction
-
-  function void notify_read_timeout();
-    `uvm_error("TIMEOUT", "Read timeout: FIFO remained empty")
+  function void handle_transaction(
+    afifo_txn txn,
+    logic [31:0] data,
+    afifo_tb_pkg::rd_status_t rd_status,
+    int unsigned retry_count
+  );
+    txn.rdata = data;
+    
+    case(rd_status)
+      afifo_tb_pkg::RD_OK: begin
+        if(retry_count > 0)
+		  `uvm_info("RD_DRV", $sformatf("Success after %0d retries: Read 0x%0h", retry_count, data), UVM_MEDIUM)
+          else
+          `uvm_info("RD_DRV", $sformatf("Read data: 0x%0h", data), UVM_MEDIUM)
+      end
+      afifo_tb_pkg::RD_UNDERFLOW:
+        `uvm_info("RD_DRV/UFLOW", $sformatf("Underflow injected: 0x%0h", data), UVM_MEDIUM)
+      afifo_tb_pkg::RD_TIMEOUT:
+        `uvm_error("RD_DRV/TMOUT", $sformatf("Timeout after %0d retries", retry_count))
+    endcase
   endfunction
 endclass
+            
 `endif

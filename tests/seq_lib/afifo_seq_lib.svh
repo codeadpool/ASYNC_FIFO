@@ -79,8 +79,8 @@ class simple_read_seq extends afifo_base_seq;
                 op_type == READ;
                 err_inject == 0;
             });
-          `uvm_info("SEQ/PKT", $sformatf("READ PKT #%0d", i), UVM_MEDIUM)
-          	finish_item(req);    	
+          `uvm_info("SEQ/PKT", $sformatf("READ PKT #%0d ", i), UVM_MEDIUM) 
+          finish_item(req);    	
         end
     endtask
 endclass
@@ -99,13 +99,14 @@ class fifo_full_seq extends afifo_base_seq;
     task body();
         afifo_txn tx;
         // Write until full + 1 extra
-        repeat(max_depth+1) begin
+      	for(int i = 0; i < num_trans+1; i++) begin
             tx = afifo_txn::type_id::create("tx");
             start_item(tx);
             assert(tx.randomize() with {
                 op_type == WRITE;
                 err_inject == 0;
             });
+          	`uvm_info("SEQ/PKT#", $sformatf("Pushing packet #%0d with Data: 0x%0h for %s", i, tx.wdata, tx.winc ? "WRITE" : "READ"), UVM_MEDIUM)
             finish_item(tx);
         end
     endtask
@@ -122,13 +123,14 @@ class fifo_empty_seq extends afifo_base_seq;
     task body();
         afifo_txn tx;
         // Read until empty + 1 extra
-        repeat(max_depth+1) begin
+      for(int i = 0; i < num_trans+1; i++) begin
             tx = afifo_txn::type_id::create("tx");
             start_item(tx);
             assert(tx.randomize() with {
                 op_type == READ;
                 err_inject == 0;
             });
+        	`uvm_info("SEQ/PKT", $sformatf("READ PKT #%0d", i), UVM_MEDIUM) 
             finish_item(tx);
         end
     endtask
@@ -148,13 +150,14 @@ class error_injection_seq extends afifo_base_seq;
     
     task body();
         afifo_txn tx;
-        repeat(num_trans) begin
+        for(int i = 0; i < num_trans; i++) begin
             tx = afifo_txn::type_id::create("tx");
             start_item(tx);
             assert(tx.randomize() with {
                 err_type == err_target;
                 err_inject == 1;
             });
+          `uvm_info("SEQ/PKT", $sformatf("Pushing Err_packet #%0d with Data: 0x%0h for %s", i, tx.wdata, tx.winc ? "WRITE" : "READ"), UVM_MEDIUM)
             finish_item(tx);
         end
     endtask
@@ -174,7 +177,7 @@ class walking_one_seq extends afifo_base_seq;
         afifo_txn tx;
         bit [31:0] walk_pattern = 32'h0000_0001;
         
-        repeat(32) begin
+      for(int i = 0; i < 32; i++) begin
             tx = afifo_txn::type_id::create("tx");
             start_item(tx);
             assert(tx.randomize() with {
@@ -182,6 +185,7 @@ class walking_one_seq extends afifo_base_seq;
                 wdata == walk_pattern;
                 err_inject == 0;
             });
+        	`uvm_info("SEQ/PKT", $sformatf("Pushing walking 1's packet #%0d with Data: 0x%0h", i, walk_pattern), UVM_MEDIUM)
             finish_item(tx);
             walk_pattern = walk_pattern << 1;
         end

@@ -2,40 +2,42 @@
 `define AFIFO_WR_MONITOR_SVH
 
 class afifo_wr_monitor extends uvm_monitor;
+  `uvm_component_utils(afifo_wr_monitor)
   
-  virtual afifo_wr_monitor_bfm m_bfm;
+  virtual afifo_wr_monitor_bfm bfm;
   uvm_analysis_port #(afifo_txn) ap;
 
-  `uvm_component_utils(afifo_wr_monitor)
-
-  function new(string name = "afifo_wr_monitor", uvm_component parent);
+  function new(string name, uvm_component parent);
     super.new(name, parent);
-    
     ap = new("ap", this);
   endfunction
 
-  virtual function void build_phase(uvm_phase phase);
+  function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    
-    if(!uvm_config_db#(virtual afifo_wr_monitor_bfm)::get(this, "", "wr_mon_bfm", m_bfm))
-      `uvm_fatal("afifo_wr_monitor", "Failed to get BFM")
-  endfunction : build_phase
-
-  virtual function void connect_phase(uvm_phase phase);
-    super.connect_phase(phase);
-    m_bfm.set_proxy(this);
-  endfunction : connect_phase
-
-  extern task run_phase(uvm_phase phase);
-
-  function void write(afifo_txn tr);
-    ap.write(tr);
+    if(!uvm_config_db#(virtual afifo_wr_monitor_bfm)::get(this, "", "wr_mon_bfm", bfm))
+      `uvm_fatal("CFG", "BFM not found")
   endfunction
-endclass
 
-task afifo_wr_monitor::run_phase(uvm_phase phase);
-  forever begin
-  	m_bfm.monitor_write(); 
-  end
-endtask
+  task run_phase(uvm_phase phase);
+    fork
+      bfm.monitor_write();
+      process_transactions();
+    join
+  endtask
+
+  task process_transactions();
+    forever begin
+      @(bfm.trans_observed);
+      report_transaction();
+    end
+  endtask
+
+  function void report_transaction();
+    afifo_txn tr = afifo_txn::type_id::create("tr");
+    tr.wdata = bfm.observed_wdata;
+    `uvm_info("MON", $sformatf("Observed write: 0x%0h", tr.wdata), UVM_MEDIUM)
+    ap.write(tr);   
+  endfunction
+
+endclass
 `endif
